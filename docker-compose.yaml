@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  jupyterlab:
+    image: jupyterlab
+    container_name: jupyterlab
+    restart: unless-stopped
+    volumes:
+    - ./src:/code/src
+    ports:
+      - 8888:8888 # container:external
+    command: "jupyter-lab --notebook-dir=/code --allow-root --app-dir /usr/local/share/jupyter/lab --ip 0.0.0.0 --no-browser --NotebookApp.token='' --NotebookApp.password='' --NotebookApp.allow_origin='*'"
+
+
