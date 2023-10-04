@@ -1,4 +1,5 @@
-FROM ubuntu:jammy-20211029
+#FROM ubuntu:jammy-20211029
+FROM osrf/ros:humble-desktop-full
 
 RUN apt-get update
 RUN apt-get install apt-utils -y
@@ -24,4 +25,6 @@ RUN pip3 install jupyterlab
 RUN pip3 install numpy
 RUN pip3 install matplotlib
 RUN pip3 install pandas
+RUN pip3 install rosbags
+RUN pip3 install common
 
